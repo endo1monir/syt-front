@@ -35,7 +35,7 @@ function App() {
 
         <div
           style={{
-            backgroundColor: "var(--secondary-color)",
+            backgroundColor: "var(--primary-color)",
             padding: "30px 15px"
           }}
         >
