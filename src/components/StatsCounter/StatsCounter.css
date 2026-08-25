@@ -29,7 +29,7 @@
 
     padding: 22px 0 26px;
 
-    border-radius: 20px;
+    border-radius: 28px;
 
     background: linear-gradient(180deg,
             rgba(255, 252, 244, 0.9) 0%,
@@ -91,7 +91,7 @@
     align-items: center;
     justify-content: center;
 
-    gap: 8px;
+    /* gap: 8px; */
 
     text-align: center;
 
@@ -113,7 +113,7 @@
 
 .stats-counter__value {
     color: var(--dark-color);
-    font-size: clamp(42px, 4vw, 62px);
+    font-size: clamp(60px, 7vw, 64px);
     font-weight: 700;
 }
 
@@ -127,7 +127,8 @@
 
     color: var(--black-color);
 
-    font-size: 11px;
+    font-size: 15px;
+    font-weight: 400;   
 
 
     direction: rtl;

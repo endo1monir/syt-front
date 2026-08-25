@@ -91,15 +91,16 @@
 ========================= */
 
 .nav-menu__title {
-  position: relative;
+  position: absolute;
+right: 35px;
+top:0;
+font-weight: 700 ;
+font-size: 28px;
 
   margin: 0;
 
   color: var(--dark-color);
 
-  font-size: 22px;
-  font-weight: 700;
-  line-height: 1;
 
   white-space: nowrap;
 
@@ -113,17 +114,16 @@
 
 .nav-menu__icon {
   position: relative;
+  right: 20px;
 
-  right: 18px;
-
-  width: 32px;
-  height: 32px;
+  width: 35px;
+  height: 35px;
 
   display: block;
 
   flex-shrink: 0;
 
-  transform: rotate(90deg);
+  transform: rotate(180deg);
 
   transition:
     right 0.35s ease,
@@ -224,6 +224,10 @@
   /* direction: rtl; */
 }
 
+.side-menu__back {
+  margin-left: auto;
+  margin-bottom:10px;
+}
 
 /* =========================
    Menu Items
@@ -245,7 +249,7 @@
   color: var(--dark-color);
 
   font-family: inherit;
-  font-size: 16px;
+  font-size: 20px;
   font-weight: 400;
 
   text-align: right;
@@ -263,11 +267,12 @@
 .side-menu__item::after {
   content: "←";
   position: absolute;
-  right: 5px;
-  top: 12px;
+  right: 0px;
+  top: 15px;
   font-size: 20px;
+  font-weight: 900;
   opacity: 0;
-  transform: translateX(10px);
+  transform: translateX(15px);
   transition: opacity 0.25s ease-in, transform 0.25s ease-in, color 0.25s ease-in;
 }
 

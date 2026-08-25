@@ -1,34 +1,22 @@
 .about-us {
-
     position: relative;
-
     z-index: 1;
-
     width: 100%;
-
     min-height: 100vh;
-
+    height: 100vh;
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
-
-    padding: 80px 4% 250px;
-
+    padding: 60px 4%;
     background-image: url("/about-us-bg.png");
-
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
-
     overflow: hidden;
-
 }
+
+
 
 /* =========================
    Title
@@ -37,9 +25,7 @@
 .about-us__title {
   margin: 0 0 20px;
 
-  color: #e8e8e8f7;
-
-  font-size: 20px;
+  color: #e8e8e8f7;;
   font-weight: 700;
 
   text-align: center;
@@ -64,6 +50,9 @@
 .about-us__text-content {
   position: relative;
   display: inline;
+  font-weight: 900;
+font-size: clamp(28px, 3vw, 52px);
+text-align: center;
 }
 
 
@@ -90,12 +79,12 @@
 
 
 .about-us__badge-icon {
-  width: 34px;
-  height: 34px;
+  width: 50px;
+  height: 50px;
   display: block;
-  object-fit: contain;
-  flex-shrink: 0;
+  transition: 0.3s ease;
 }
+
 
 
 /* =========================
@@ -287,8 +276,8 @@
   }
 
   .about-us__badge-icon {
-    width: 30px;
-    height: 30px;
+    width: 35px;
+    height: 35px;
   }
 }
 
@@ -299,11 +288,10 @@
 
 @media (max-width: 900px) {
   .about-us {
-    min-height: auto;
-  margin-top: 100px;
-
-
-    padding: 110px 24px 90px;
+    min-height: 100vh;
+    height: 100vh;
+    margin-top: 0;
+    padding: 60px 24px;
   }
 
   .about-us__title {
@@ -361,10 +349,10 @@
     shape-margin: 10px;
   }
 
-  .about-us__badge-icon {
+  /* .about-us__badge-icon {
     width: 25px;
     height: 25px;
-  }
+  } */
 
   .about-us__badge--yellow {
     margin: 0 14px 4px 0;

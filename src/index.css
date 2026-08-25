@@ -61,10 +61,8 @@ body {
   background-color: var(--main-bg);
   min-height: 100vh;
 }
-.about-services-wrapper {
-
-    position: relative;
-
-    overflow: hidden;
-
+.about-services-wrapper,
+.cases-faq-wrapper {
+  position: relative;
 }
+

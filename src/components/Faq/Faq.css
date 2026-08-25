@@ -3,20 +3,20 @@
 ========================= */
 
 .faq {
-
+    position: relative;
+    z-index: 2;
     width: 100%;
-
-    /* min-height: 100vh; */
-
-    padding: 100px 6%;
-
+    min-height: 100vh;
+    padding-top: clamp(200px, 16vw, 280px);
+    padding-bottom: 100px;
+    padding-inline: 6%;
     background: var(--secondary-color);
-
     color: white;
-
     overflow: hidden;
-
+    clip-path: polygon(0 clamp(150px, 10vw, 200px), 100% 0, 100% 100%, 0 100%);
+    will-change: transform;
 }
+
 
 
 
@@ -400,23 +400,23 @@
 ========================= */
 
 @media(max-width:900px) {
-
-
     .faq {
-
-        padding: 70px 25px;
-
+        padding-top: 130px;
+        padding-bottom: 70px;
+        padding-inline: 25px;
+        clip-path: polygon(0 clamp(90px, 15vw, 150px), 100% 0, 100% 100%, 0 100%);
     }
 
 
     .faq__container {
 
-        grid-template-columns: 1fr;
+        display: flex;
+
+        flex-direction: column-reverse;
 
         gap: 50px;
 
     }
-
 
     .faq__side {
 

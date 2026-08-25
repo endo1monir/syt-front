@@ -1,6 +1,9 @@
 .case-studies-section {
+    position: relative;
+    z-index: 1;
     width: 100%;
     min-height: 100vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,6 +12,7 @@
     background-position: center;
     overflow: hidden;
 }
+
 
 
 .case-studies-wrap {
