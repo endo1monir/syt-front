@@ -1,0 +1,40 @@
+/* =========================
+   Navbar
+========================= */
+
+.navbar {
+  padding: 30px 80px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  direction: ltr;
+}
+
+
+/* =========================
+   Navbar Logo
+========================= */
+
+.navbar__logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.navbar__logo img {
+  display: block;
+  width: auto;
+  height: auto;
+}
+
+@media (max-width:900px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .navbar__logo {
+    width: 110px;
+    height: 40px;
+  }
+}

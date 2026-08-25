@@ -1,0 +1,312 @@
+
+/* =========================
+   Side Menu Wrapper
+========================= */
+
+.side-menu-wrapper {
+  position: relative;
+
+  width: 150px;
+  /* height: 32px; */
+
+  display: flex;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   Side Menu
+========================= */
+
+.side-menu {
+  position: absolute;
+
+  top: -16px;
+  right: -20px;
+
+  width: 150px;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+  border-radius: 12px;
+
+  background-color: transparent;
+
+  overflow: hidden;
+
+  z-index: 1000;
+
+  transform-origin: top right;
+
+  transition:
+    width 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    padding 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+/* =========================
+   Open Menu
+========================= */
+
+.side-menu--open {
+  width: 295px;
+
+  padding: 20px 20px 12px;
+
+  background-color: var(--foreground-color);
+
+  box-shadow: 0 8px 30px rgb(0 0 0 / 5%);
+}
+
+/* =========================
+   Menu Trigger
+========================= */
+
+.nav-menu {
+  position: relative;
+
+  width: fit-content;
+
+  display: flex;
+  align-items: center;
+
+  margin-left: auto;
+
+  /* direction: rtl; */
+
+  cursor: pointer;
+
+  z-index: 1000;
+}
+
+
+/* =========================
+   Menu Title
+========================= */
+
+.nav-menu__title {
+  position: relative;
+
+  margin: 0;
+
+  color: var(--dark-color);
+
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1;
+
+  white-space: nowrap;
+
+  z-index: 2;
+}
+
+
+/* =========================
+   Menu Icon
+========================= */
+
+.nav-menu__icon {
+  position: relative;
+
+  right: 18px;
+
+  width: 32px;
+  height: 32px;
+
+  display: block;
+
+  flex-shrink: 0;
+
+  transform: rotate(90deg);
+
+  transition:
+    right 0.35s ease,
+    transform 0.35s ease;
+}
+
+
+/* Menu icon while hover/open */
+
+.nav-menu:hover .nav-menu__icon,
+.side-menu--open .nav-menu__icon {
+  right: -5px;
+
+  transform: rotate(-45deg);
+}
+
+
+/* =========================
+   Menu Body
+========================= */
+
+.side-menu__body {
+  width: 100%;
+
+  margin-top: 25px;
+
+  overflow: hidden;
+}
+
+
+/* =========================
+   Menu Views
+========================= */
+
+.side-menu__view {
+  width: 100%;
+}
+
+
+/* Main Menu enters from right */
+
+.side-menu__view--main {
+  animation: menu-from-right 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* Services enters from left */
+
+.side-menu__view--services {
+  animation: menu-from-left 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   View Animations
+========================= */
+
+@keyframes menu-from-left {
+  from {
+    opacity: 0;
+
+    transform: translateX(-100px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+@keyframes menu-from-right {
+  from {
+    opacity: 0;
+
+    transform: translateX(45px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateX(0);
+  }
+}
+
+
+/* =========================
+   Menu Content
+========================= */
+
+.side-menu__content {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  /* direction: rtl; */
+}
+
+
+/* =========================
+   Menu Items
+========================= */
+
+.side-menu__item {
+  width: 100%;
+
+  display: block;
+  position: relative;
+
+  padding: 14px 0;
+
+  border: 0;
+  border-bottom: 1px solid rgb(36 36 36 / 12%);
+
+  background-color: transparent;
+
+  color: var(--dark-color);
+
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+
+  text-align: right;
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    padding-right 0.25s ease-in,
+    margin-right 0.25s ease-in,
+    border-bottom-color 0.25s ease-in,
+    color 0.25s ease-in;
+}
+
+.side-menu__item::after {
+  content: "←";
+  position: absolute;
+  right: 5px;
+  top: 12px;
+  font-size: 20px;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: opacity 0.25s ease-in, transform 0.25s ease-in, color 0.25s ease-in;
+}
+
+
+.side-menu__item:hover {
+  padding-right: 30px;
+  color: var(--secondary-color);
+  border-bottom-color: var(--dark-color);
+}
+
+.side-menu__item:hover::after {
+  opacity: 1;
+  transform: translateX(0);
+  color: var(--dark-color);
+}
+
+
+/* =========================
+   Overlay
+========================= */
+
+.side-menu__overlay {
+  position: fixed;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0;
+  margin: 0;
+
+  border: 0;
+
+  background-color: rgb(0 0 0 / 10%);
+
+  backdrop-filter: blur(1.5px);
+
+  cursor: default;
+
+  z-index: 999;
+}
