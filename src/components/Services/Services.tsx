@@ -1,6 +1,5 @@
 import "./Services.css";
 import servicesData from "../../helper/services.json";
-
 import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -169,21 +168,17 @@ const Services = () => {
 
 
 
-                                    <a
+                    <a
+    href="#"
+    className="service-card__link"
+>
+    <span>
+        ←
+    </span>
 
-                                        href="#"
+    {service.cta}
 
-                                        className="service-card__link"
-
-                                    >
-
-                                        {service.cta}
-
-                                        <span>
-                                            ←
-                                        </span>
-
-                                    </a>
+</a>
 
 
 
@@ -200,7 +195,12 @@ const Services = () => {
 
                 </div>
 
-
+                <div className="services__footer">
+                    <p>و المزيد من الخدمات اللتي تدعم نشاطك التجاري</p>
+                    <button type="button" className="services__button">
+                       المزيد من الخدمات
+                    </button>
+                </div>
 
             </div>
 

@@ -48,11 +48,25 @@
 }
 
 /* Map cards to grid areas */
-.service-card:nth-child(1) { grid-area: card1; }
-.service-card:nth-child(2) { grid-area: card2; }
-.service-card:nth-child(3) { grid-area: card3; }
-.service-card:nth-child(4) { grid-area: card4; }
-.service-card:nth-child(5) { grid-area: card5; }
+.service-card:nth-child(1) {
+    grid-area: card1;
+}
+
+.service-card:nth-child(2) {
+    grid-area: card2;
+}
+
+.service-card:nth-child(3) {
+    grid-area: card3;
+}
+
+.service-card:nth-child(4) {
+    grid-area: card4;
+}
+
+.service-card:nth-child(5) {
+    grid-area: card5;
+}
 
 
 
@@ -121,7 +135,7 @@
 
 .service-card__badge {
 
-    font-size: clamp(14px,2vw,18px);
+    font-size: clamp(14px, 2vw, 18px);
     font-weight: 900;
 
 }
@@ -154,7 +168,7 @@
 
 
 .service-card__description p {
-    font-size: clamp(14px,2vw,16px);
+    font-size: clamp(14px, 2vw, 16px);
     font-weight: 400;
 }
 
@@ -164,45 +178,191 @@
 
 
 
-/* Link */
-
 .service-card__link {
 
-    margin-top: 25px;
+    margin-top:25px;
 
-    display: flex;
+    display:flex;
 
-    align-items: center;
+    align-items:center;
 
-    gap: 10px;
+    gap:10px;
 
-    text-decoration: none;
+    text-decoration:none;
 
-    font-size: 20px;
+    font-size:20px;
 
-    font-weight: 400;
+    font-weight:400;
+
+    direction:rtl;
+
+    transition:.4s ease;
 
 }
 
 
+
+/* Default */
 
 .service-card__link span {
 
-    display: inline-block;
+    order:2;
 
-    transition: transform .3s ease;
+    transition:.4s ease;
 
 }
 
 
+
+/* Hover */
 
 .service-card__link:hover span {
 
-    transform: translateX(-6px);
+    order:0;
+
+}
+.service-card__link span {
+    transition: transform .4s ease;
+}
+
+
+.service-card__link:hover span {
+    transform:translateX(-5px);
+}
+
+.services__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding-top: 50px;
 
 }
 
 
+.services__button {
+    position: relative;
+
+    width: fit-content;
+    min-height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    padding: 15px 25px 12px 55px;
+
+    border: 1px solid var(--secondary-color);
+    border-radius: 48px;
+
+    background-color: transparent;
+
+    color: var(--secondary-color);
+
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 500;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    overflow: hidden;
+
+    transition:
+        padding 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        background-color 0.6s ease,
+        color 0.3s ease;
+}
+
+
+
+.services__button::before {
+    content: "←";
+
+    position: absolute;
+
+    top: 50%;
+    right: 18px;
+
+    font-size: 27px;
+    line-height: 1;
+
+    opacity: 0;
+
+    transform:
+        translateY(-50%) translateX(18px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+
+/* =========================
+   Initial LEFT Arrow
+========================= */
+
+.services__button::after {
+    content: "←";
+
+    position: absolute;
+
+    top: 50%;
+    left: 18px;
+
+    font-size: 27px;
+    line-height: 1;
+
+    opacity: 1;
+
+    transform:
+        translateY(-50%) translateX(0);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+
+}
+
+
+/* =========================
+   Button Hover
+========================= */
+
+.services__button:hover {
+    /*
+    Arrow moves to RIGHT,
+    so padding shifts from left to right
+  */
+    padding-right: 55px;
+    padding-left: 22px;
+    background-color: var(--secondary-color);
+    color: #ffffff;
+    border-radius: 12px;
+}
+
+
+/* Hide Left Arrow */
+
+.services__button:hover::after {
+    opacity: 0;
+
+    transform:
+        translateY(-50%) translateX(-18px);
+}
+
+
+/* Show Right Arrow */
+
+.services__button:hover::before {
+    opacity: 1;
+
+    transform:
+        translateY(-50%) translateX(0);
+}
 
 /* =========================
    Responsive
@@ -242,4 +402,3 @@
         font-size: 22px;
     }
 }
-

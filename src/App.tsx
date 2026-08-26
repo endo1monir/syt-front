@@ -14,6 +14,7 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import Blog from "./components/Blog/Blog";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
@@ -57,6 +58,7 @@ function App() {
           <Services />
         </div>
 
+        <Blog />
         <div className="cases-faq-wrapper">
           <CaseStudies />
           <Faq />
