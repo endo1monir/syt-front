@@ -1,5 +1,4 @@
-
-import "./Hero.css"
+import "./Hero.css";
 
 const Hero = () => {
   return (
@@ -8,6 +7,7 @@ const Hero = () => {
         <div className="hero__visual">
           <picture>
             <source media="(max-width: 768px)" srcSet="/hero-md.png" />
+
             <img
               src="/hero.png"
               alt="صيت للتسويق والتجارة الإلكترونية"
@@ -16,7 +16,6 @@ const Hero = () => {
           </picture>
         </div>
 
-        {/* Hero Content */}
         <div className="hero__content">
           <h1>جاهز تصير قصتنا الجاية ؟</h1>
 

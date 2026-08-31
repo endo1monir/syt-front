@@ -1,68 +1,77 @@
 @import "tailwindcss";
 
-
-
 @font-face {
-    font-family: "TheYearOfHandicrafts";
-    src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Regular.otf") format("opentype");
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+  font-family: "TheYearOfHandicrafts";
+  src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 
-
 @font-face {
-    font-family: "TheYearOfHandicrafts";
-    src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Medium.otf") format("opentype");
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "TheYearOfHandicrafts";
+  src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
-
 @font-face {
-    font-family: "TheYearOfHandicrafts";
-    src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Bold.otf") format("opentype");
-    font-weight: 700;
-    font-style: normal;
-    font-display: swap;
+  font-family: "TheYearOfHandicrafts";
+  src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-
 @font-face {
-    font-family: "TheYearOfHandicrafts";
-    src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Black.otf") format("opentype");
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
-}
-
-* {
-  font-family: "TheYearOfHandicrafts", sans-serif;
+  font-family: "TheYearOfHandicrafts";
+  src: url("./assets/fonts/alfont_com_TheYearofHandicrafts-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 :root {
-  --main-bg: #FFFCF4;
+  --main-bg: #fffcf4;
   --primary-color: #eee65a;
   --secondary-color: #2f0b60;
   --dark-color: #242424;
-  --black-color: #1F1F1F;
+  --black-color: #1f1f1f;
   --foreground-color: #ffffff;
+  --page-bg: var(--main-bg);
+  --text-color: var(--dark-color);
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "TheYearOfHandicrafts", sans-serif;
 }
 
 html,
 body {
   margin: 0;
+  padding: 0;
+  color: var(--text-color);
   font-family: "TheYearOfHandicrafts", sans-serif;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
   background-color: var(--main-bg);
 }
 
-.layout {
-  background-color: var(--main-bg);
-  min-height: 100vh;
+.dark-theme {
+  background-color: var(--dark-color);
+  overflow: auto;
 }
+
+.light-theme {
+  background-color: var(--main-bg);
+
+
+}
+
 .about-services-wrapper,
 .cases-faq-wrapper {
   position: relative;
 }
-

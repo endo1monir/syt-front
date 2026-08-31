@@ -37,10 +37,7 @@ const StatsCounter = () => {
     <section className="stats-section">
       <div className="stats-counter">
         {stats.map((stat) => (
-          <div
-            className="stats-counter__item"
-            key={stat.id}
-          >
+          <div className="stats-counter__item" key={stat.id}>
             <div className="stats-counter__value">
               <AnimatedCounter
                 start={0}
@@ -54,9 +51,7 @@ const StatsCounter = () => {
               />
             </div>
 
-            <p className="stats-counter__label">
-              {stat.label}
-            </p>
+            <p className="stats-counter__label">{stat.label}</p>
           </div>
         ))}
       </div>

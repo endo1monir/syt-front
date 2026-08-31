@@ -1,115 +1,62 @@
-/* =========================
-   Stats Section
-========================= */
-
 .stats-section {
     position: relative;
-    width: 100%;
     display: flex;
     justify-content: center;
+    width: 100%;
     margin-top: 100px;
-
 }
-
-
-/* =========================
-   Stats Counter
-========================= */
 
 .stats-counter {
     position: absolute;
-
-    max-width: 1200px;
-    width: 90%;
+    z-index: 5;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
-
+    width: 90%;
+    max-width: 1200px;
     margin-top: -120px;
-
     padding: 22px 0 26px;
-
+    overflow: hidden;
     border-radius: 28px;
-
     background: linear-gradient(180deg,
             rgba(255, 252, 244, 0.9) 0%,
             rgba(255, 252, 244, 0.72) 45%,
             rgba(129, 73, 173, 0.55) 100%);
-
     backdrop-filter: blur(82.4px);
     -webkit-backdrop-filter: blur(82.4px);
-
-    overflow: hidden;
-
-    z-index: 5;
 }
-
-
-/* =========================
-   Gradient Border
-========================= */
 
 .stats-counter::before {
     content: "";
-
     position: absolute;
-
+    z-index: 2;
     inset: 0;
-
     padding: 2px;
-
     border-radius: inherit;
-
     background: linear-gradient(180deg,
             rgba(255, 255, 255, 0) 0%,
             #ffffff 100%);
-
     pointer-events: none;
-
-    z-index: 2;
-
     -webkit-mask:
         linear-gradient(#fff 0 0) content-box,
         linear-gradient(#fff 0 0);
-
     -webkit-mask-composite: xor;
-
     mask-composite: exclude;
 }
 
-
-/* =========================
-   Stat Item
-========================= */
-
 .stats-counter__item {
     position: relative;
-
-
+    z-index: 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    /* gap: 8px; */
-
     text-align: center;
-
-    z-index: 3;
 }
-
-
-/* =========================
-   Separator Between Stats
-========================= */
 
 .stats-counter__item:not(:last-child) {
-    border-right: 0.9px solid #FFFFFFE3;
+    border-right: 0.9px solid #ffffffe3;
 }
-
-/* =========================
-   Number
-========================= */
 
 .stats-counter__value {
     color: var(--dark-color);
@@ -117,35 +64,20 @@
     font-weight: 700;
 }
 
-
-/* =========================
-   Label
-========================= */
-
 .stats-counter__label {
     margin: 0;
-
     color: var(--black-color);
-
     font-size: 15px;
-    font-weight: 400;   
-
-
+    font-weight: 400;
     direction: rtl;
 }
 
 
-/* =========================
-   Responsive
-========================= */
-
+/* START OF RESPONSIVE */
 @media (max-width: 991px) {
-
     .stats-counter {
         grid-template-columns: repeat(2, 1fr);
-
         margin-top: -75px;
-
         padding: 15px;
     }
 
@@ -153,15 +85,35 @@
         min-height: 105px;
     }
 
-    .stats-counter__item::after {
-        display: none;
-    }
-
     .stats-counter__item:not(:last-child) {
         border: none;
     }
 }
 
+@media (max-width: 600px) {
+    .stats-section {
+        margin-top: 80px;
+    }
+
+    .stats-counter {
+        width: calc(100% - 32px);
+        margin-top: -65px;
+        padding: 12px;
+        border-radius: 20px;
+    }
+
+    .stats-counter__item {
+        min-height: 95px;
+    }
+
+    .stats-counter__value {
+        font-size: 44px;
+    }
+
+    .stats-counter__label {
+        font-size: 12px;
+    }
+}
 
 @media (max-width: 480px) {
     .stats-counter__value {

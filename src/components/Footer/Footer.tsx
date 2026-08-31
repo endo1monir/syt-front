@@ -3,7 +3,7 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <footer className="footer" dir="rtl">
- <picture className="footer-picture">
+      <picture className="footer-picture">
         <source
           media="(max-width: 900px)"
           srcSet="/footer-md.png"
@@ -16,14 +16,12 @@ const Footer = () => {
         />
       </picture>
 
-
       <div className="footer__grid">
-
-        {/* =========================
-            Important Links
-        ========================== */}
+        {/* START OF GRID COLUMN 1 */}
         <div className="footer__column">
-          <h3 className="footer__title">روابط هامة</h3>
+          <h3 className="footer__title">
+            روابط هامة
+          </h3>
 
           <nav className="footer__links">
             <a href="/">الرئيسية</a>
@@ -34,12 +32,11 @@ const Footer = () => {
           </nav>
         </div>
 
-
-        {/* =========================
-            Services
-        ========================== */}
+        {/* START OF GRID COLUMN 2 */}
         <div className="footer__column">
-          <h3 className="footer__title">خدماتنا في صيت</h3>
+          <h3 className="footer__title">
+            خدماتنا في صيت
+          </h3>
 
           <nav className="footer__links">
             <a href="#">تحسين محركات البحث</a>
@@ -54,12 +51,11 @@ const Footer = () => {
           </nav>
         </div>
 
-
-        {/* =========================
-            Projects
-        ========================== */}
+        {/* START OF GRID COLUMN 3 */}
         <div className="footer__column">
-          <h3 className="footer__title">بعض المشاريع</h3>
+          <h3 className="footer__title">
+            بعض المشاريع
+          </h3>
 
           <div className="footer__links">
             <a href="#">جسار</a>
@@ -69,15 +65,13 @@ const Footer = () => {
           </div>
         </div>
 
-
-        {/* =========================
-            Contact
-        ========================== */}
+        {/* START OF GRID COLUMN 4 */}
         <div className="footer__column footer__column--contact">
-          <h3 className="footer__title">بيانات التواصل</h3>
+          <h3 className="footer__title">
+            بيانات التواصل
+          </h3>
 
           <div className="footer__contact">
-
             <div className="footer__contact-item">
               <span className="footer__icon">
                 <svg viewBox="0 0 24 24">
@@ -90,7 +84,6 @@ const Footer = () => {
               </span>
             </div>
 
-
             <div className="footer__contact-item">
               <span className="footer__icon">
                 <svg viewBox="0 0 24 24">
@@ -102,7 +95,6 @@ const Footer = () => {
                 536195067
               </a>
             </div>
-
 
             <div className="footer__contact-item">
               <span className="footer__icon footer__icon--stroke">
@@ -117,7 +109,6 @@ const Footer = () => {
               </a>
             </div>
 
-
             <div className="footer__contact-item">
               <span className="footer__icon">
                 <svg viewBox="0 0 24 24">
@@ -125,31 +116,32 @@ const Footer = () => {
                 </svg>
               </span>
 
-              <a href="https://wa.me/551980314" dir="ltr">
+              <a
+                href="https://wa.me/551980314"
+                dir="ltr"
+              >
                 551980314
               </a>
             </div>
-
           </div>
 
-
-          {/* Put your Saudi/company logos here */}
           <div className="footer__certificates">
             <img
               src="/footer-icon-1.svg"
               alt="اعتمادات صيت"
             />
+
             <img
               src="/footer-icon-2.svg"
               alt="اعتمادات صيت"
             />
+
             <img
               src="/footer-icon-3.svg"
               alt="اعتمادات صيت"
             />
           </div>
         </div>
-
       </div>
     </footer>
   );

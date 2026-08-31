@@ -1,82 +1,58 @@
 import "./index.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Hero from "./components/Hero/Hero";
-import NavBar from "./components/NavBar/NavBar";
-import StatsCounter from "./components/StatsCounter/StatsCounter";
-import AboutUs from "./components/AboutUs/AboutUs";
-import Footer from "./components/Footer/Footer";
-import Faq from "./components/Faq/Faq";
-import CaseStudies from "./components/CaseStudies/CaseStudies";
-import Services from "./components/Services/Services";
+import Home from "./pages/Home";
+import Blog from "./pages/Blog/Blog";
+import About from "./pages/About/About";
 
-
-import { useRef } from "react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useGSAP } from "@gsap/react";
-import Blog from "./components/Blog/Blog";
-
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+import SeoService from "./pages/Services/SeoService";
+import SocialService from "./pages/Services/SocialService";
+import CroService from "./pages/Services/CroServices";
+import InfluencerServices from "./pages/InfluencerServices/InfluencerServices";
+import UiUxServices from "./pages/Services/UiUxServices";
 
 function App() {
-  const mainRef = useRef<HTMLDivElement | null>(null);
-
-  useGSAP(
-    () => {
-      // 1. AboutUs pinned while Services sweeps above it (high on Left -> low on Right)
-      ScrollTrigger.create({
-        trigger: ".about-us",
-        start: "top top",
-        endTrigger: ".services",
-        end: "top top",
-        pin: true,
-        pinSpacing: false,
-      });
-
-      // 2. CaseStudies pinned while FAQ sweeps above it (high on Right -> low on Left)
-      ScrollTrigger.create({
-        trigger: ".case-studies-section",
-        start: "top top",
-        endTrigger: ".faq",
-        end: "top top",
-        pin: true,
-        pinSpacing: false,
-      });
-    },
-    { scope: mainRef }
-  );
-
   return (
-    <>
-      <div className="layout" ref={mainRef}>
-        <NavBar />
-        <Hero />
-        <StatsCounter />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
 
-        <div className="about-services-wrapper">
-          <AboutUs />
-          <Services />
-        </div>
+        <Route path="/blog" element={<Blog />} />
 
-        <Blog />
-        <div className="cases-faq-wrapper">
-          <CaseStudies />
-          <Faq />
-        </div>
+        <Route path="/about" element={<About />} />
 
-        <div
-          style={{
-            backgroundColor: "var(--secondary-color)",
-            padding: "0 15px 30px",
-          }}
-        >
-          <Footer />
-        </div>
-      </div>
-    </>
+        <Route
+          path="/influencer-services"
+          element={<InfluencerServices />}
+        />
+
+        {/* Services */}
+        <Route
+          path="/services/seo"
+          element={<SeoService />}
+        />
+
+        <Route
+          path="/services/social-media"
+          element={<SocialService />}
+        />
+
+        <Route
+          path="/services/cro"
+          element={<CroService />}
+        />
+
+        <Route
+          path="/services/ads"
+          element={<CroService />}
+        />
+        <Route
+          path="/services/ui-ux"
+          element={<UiUxServices />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-
 
 export default App;
