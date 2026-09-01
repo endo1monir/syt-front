@@ -137,7 +137,7 @@ const DarkNavBar = () => {
 
 
                   <Link
-                    to="/#portfolio"
+                    to="/portfolio"
                     onClick={closeMenu}
                   >
                     أعمالنا السابقة
@@ -169,7 +169,7 @@ const DarkNavBar = () => {
 
                   <button
                     type="button"
-                    className="light-navbar__back"
+                    id="light-navbar__back"
                     onClick={() =>
                       setActiveView("main")
                     }

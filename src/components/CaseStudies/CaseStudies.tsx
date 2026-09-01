@@ -27,12 +27,12 @@ const CaseStudies: React.FC = () => {
 
   const slides: SlideItem[] = caseStudiesData.caseStudiesData;
 
-  const coverflowConfig = useMemo(
+const coverflowConfig = useMemo(
     () => ({
-      rotate: 0,
-      stretch: 0,
-      depth: 500,
-      modifier: 1,
+      rotate: -1,
+      stretch: 10,
+      depth: 100,
+      modifier: 5,
       slideShadows: false,
     }),
     []
@@ -73,9 +73,11 @@ const CaseStudies: React.FC = () => {
           effect="coverflow"
           grabCursor
           centeredSlides
+          centeredSlidesBounds
           loop
           slideToClickedSlide
-          slidesPerView="auto"
+          slidesPerView={3}
+          spaceBetween={-10}
           watchSlidesProgress
           keyboard={{
             enabled: true,
@@ -86,40 +88,54 @@ const CaseStudies: React.FC = () => {
           }}
           coverflowEffect={coverflowConfig}
           autoplay={autoplayConfig}
+          breakpoints={{
+            0: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+          }}
           onSwiper={(swiper) => {
             swiperRef.current = swiper;
           }}
           onSlideChange={(swiper) => {
             setActiveIndex(swiper.realIndex);
           }}
-          className="case-studies-swiper"
+          className="portfolio-slider__swiper"
         >
           {slides.map((slide, index) => (
+
             <SwiperSlide
               key={slide.id}
-              className="case-studies-slide"
+              className="portfolio-slider__slide"
             >
+
               <div
-                className="case-studies-card"
-                onClick={() => handleCardClick(slide, index)}
+                className="portfolio-slider__card"
+                onClick={() =>
+                  handleCardClick(slide, index)
+                }
                 role="button"
                 tabIndex={0}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") {
-                    handleCardClick(slide, index);
-                  }
-                }}
               >
+
                 <img
                   src={slide.image}
                   alt={slide.title}
+                  className="portfolio-slider__image"
                   draggable={false}
-                  className="case-studies-img"
                   loading="lazy"
                 />
+
               </div>
+
             </SwiperSlide>
+
           ))}
+
         </Swiper>
 
         <div className="case-studies-caption">

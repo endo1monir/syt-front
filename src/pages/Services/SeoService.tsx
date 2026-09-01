@@ -163,9 +163,7 @@ const SeoService = () => {
 
             </main>
             
-            <footer className="footer">
                 <Footer />
-            </footer>
         </div>
     );
 };

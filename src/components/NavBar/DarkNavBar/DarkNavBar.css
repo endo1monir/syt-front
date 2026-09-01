@@ -146,8 +146,9 @@
 .dark-navbar__menu--open {
     width: 295px;
     padding: 20px 20px 12px;
-    background: #ffffff;
+    background: var(--dark-color);
     box-shadow: 0 8px 30px rgb(0 0 0 / 10%);
+
 }
 
 .dark-navbar__menu-trigger {
@@ -189,7 +190,7 @@
 }
 
 .dark-navbar__menu--open .dark-navbar__menu-trigger h2 {
-    color: var(--dark-color);
+    color: #ffffff;
 }
 
 .dark-navbar__menu-body {
@@ -213,7 +214,7 @@
     border: 0;
     border-bottom: 1px solid rgb(36 36 36 / 12%);
     background: transparent;
-    color: var(--dark-color);
+    color: #ffffff;
     font-family: inherit;
     font-size: 20px;
     text-align: right;
@@ -224,8 +225,7 @@
         color 0.25s ease;
 }
 
-.dark-navbar__menu-content a::after,
-.dark-navbar__menu-content button::after {
+.dark-navbar__menu-content a::after {
     content: "←";
     position: absolute;
     top: 15px;
@@ -240,7 +240,7 @@
 .dark-navbar__menu-content a:hover,
 .dark-navbar__menu-content button:hover {
     padding-right: 30px;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .dark-navbar__menu-content a:hover::after,
@@ -249,9 +249,11 @@
     transform: translateX(0);
 }
 
-.dark-navbar__back {
+#light-navbar__back {
     margin-bottom: 10px;
-    margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
 }
 
 .dark-navbar__overlay {

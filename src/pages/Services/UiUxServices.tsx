@@ -160,9 +160,7 @@ const UiUxServices = () => {
 
             </main>
 
-            <footer className="footer">
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     );
 };

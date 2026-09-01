@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Footer.css";
 
 const Footer = () => {
@@ -24,11 +25,10 @@ const Footer = () => {
           </h3>
 
           <nav className="footer__links">
-            <a href="/">الرئيسية</a>
-            <a href="/services">خدماتنا</a>
-            <a href="/blog">المدونة</a>
-            <a href="/about">من نحن</a>
-            <a href="/privacy">سياسة الخصوصية</a>
+            <Link to="/">الرئيسية</Link>
+            <Link to="/blog">المدونة</Link>
+            <Link to="/about">من نحن</Link>
+            <Link to="/">سياسة الخصوصية</Link>
           </nav>
         </div>
 
@@ -39,15 +39,15 @@ const Footer = () => {
           </h3>
 
           <nav className="footer__links">
-            <a href="#">تحسين محركات البحث</a>
-            <a href="#">الحملات الإعلانية</a>
-            <a href="#">إدارة السوشيال ميديا</a>
-            <a href="#">رفع معدلات التحويل</a>
-            <a href="#">إدارة المتاجر الإلكترونية</a>
-            <a href="#">تحليل البيانات</a>
-            <a href="#">واجهة المستخدم ui ux</a>
-            <a href="#">تصميم الجرافيك و الموشن</a>
-            <a href="#">صيت بلس</a>
+            <Link to="/services/seo">تحسين محركات البحث</Link>
+            <Link to="/services/ads">الحملات الإعلانية</Link>
+            <Link to="/services/social-media">إدارة السوشيال ميديا</Link>
+            <Link to="/services/cro">رفع معدلات التحويل</Link>
+            <Link to="/services/ui-ux">واجهة المستخ دم ui ux</Link>
+            <Link to="">إدارة المتاجر الإلكترونية</Link>
+            <Link to="">تحليل البيانات</Link>
+            <Link to="/">تصميم الجرافيك و الموشن</Link>
+            <Link to="/">صيت بلس</Link>
           </nav>
         </div>
 

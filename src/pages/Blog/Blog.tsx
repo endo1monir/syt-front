@@ -59,9 +59,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <footer className="footer">
         <Footer />
-      </footer>
     </div >
   );
 }

@@ -158,9 +158,7 @@ const InfluencerServices = () => {
                 </section>
 
             </main>
-            <footer className="footer">
-                <Footer />
-            </footer>
+            <Footer />
         </div>
     );
 };

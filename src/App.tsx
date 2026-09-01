@@ -10,6 +10,7 @@ import SocialService from "./pages/Services/SocialService";
 import CroService from "./pages/Services/CroServices";
 import InfluencerServices from "./pages/InfluencerServices/InfluencerServices";
 import UiUxServices from "./pages/Services/UiUxServices";
+import Portfolio from "./pages/Portfolio/Portfolio";
 
 function App() {
   return (
@@ -20,6 +21,8 @@ function App() {
         <Route path="/blog" element={<Blog />} />
 
         <Route path="/about" element={<About />} />
+
+        <Route path="/portfolio" element={<Portfolio />} />
 
         <Route
           path="/influencer-services"

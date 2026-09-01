@@ -16,12 +16,16 @@
 
 .case-studies-wrap {
   position: relative;
+
   display: flex;
   flex-direction: column;
   align-items: center;
+
   gap: 28px;
+
   width: 100%;
-  max-width: 900px;
+  max-width: 1200px;
+
   margin: 0 auto;
 }
 
@@ -35,8 +39,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 300px;
-  height: 400px;
+  height: 500px;
+
   border-radius: 20px;
 }
 

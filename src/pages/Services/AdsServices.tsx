@@ -158,9 +158,7 @@ const AdsService = () => {
                 </section>
             </main>
 
-            <footer className="footer">
                 <Footer />
-            </footer>
         </div>
     );
 };

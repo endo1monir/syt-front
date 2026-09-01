@@ -6,6 +6,7 @@ import { Mousewheel, FreeMode } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/free-mode";
+import { Link } from "react-router-dom";
 
 interface BlogItem {
   id: number;
@@ -83,7 +84,11 @@ const Blog = () => {
 
             <SwiperSlide>
               <div className="blog-section__transparent-box">
-                <h2>أقرأ احدث المقالات</h2>
+                <Link
+                  to="/blog"
+                >
+                  <h2 className="blog-section__transparent-box-text">أقرأ احدث المقالات</h2>
+                </Link>
 
                 <img
                   className="blog-section__shape-1"
