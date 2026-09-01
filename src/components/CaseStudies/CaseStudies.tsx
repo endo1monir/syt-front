@@ -27,7 +27,7 @@ const CaseStudies: React.FC = () => {
 
   const slides: SlideItem[] = caseStudiesData.caseStudiesData;
 
-const coverflowConfig = useMemo(
+  const coverflowConfig = useMemo(
     () => ({
       rotate: -1,
       stretch: 10,

@@ -327,9 +327,7 @@ const Portfolio = () => {
 
         </div>
       </section>
-
       <Footer />
-
     </div>
   );
 };
