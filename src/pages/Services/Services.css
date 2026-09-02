@@ -1,3 +1,7 @@
+/* =========================================================
+   HOW WE WORK
+========================================================= */
+
 .how-we-work {
   position: relative;
   width: 100%;
@@ -50,7 +54,7 @@
   background-position: center;
   background-size: contain;
   color: #ffffff;
-  transform-origin: cover;
+  transform-origin: center;
   transition: all 0.3s ease-in;
 }
 
@@ -126,6 +130,11 @@
   color: #111111;
 }
 
+
+/* =========================================================
+   HOW WE WORK — 1200px
+========================================================= */
+
 @media (max-width: 1200px) {
   .how-we-work__cards {
     min-height: 480px;
@@ -139,6 +148,11 @@
     font-size: clamp(65px, 8vw, 95px);
   }
 }
+
+
+/* =========================================================
+   HOW WE WORK — 900px
+========================================================= */
 
 @media (max-width: 900px) {
   .how-we-work {
@@ -164,7 +178,16 @@
   }
 }
 
+
+/* =========================================================
+   HOW WE WORK — 768px
+========================================================= */
+
 @media (max-width: 768px) {
+  .how-we-work {
+    padding: 70px 20px 90px;
+  }
+
   .how-we-work__title {
     margin-bottom: 45px;
     font-size: 32px;
@@ -204,13 +227,59 @@
     max-width: 100%;
     font-size: 10px;
   }
-}
 
-@media (max-width: 576px) {
-  .how-we-work__cards {
-    grid-template-columns: repeat(2, 1fr);
+  .how-we-work__card:hover {
+    transform: none;
   }
 }
+
+
+/* =========================================================
+   HOW WE WORK — 576px
+========================================================= */
+
+@media (max-width: 576px) {
+  .how-we-work {
+    padding: 60px 15px 80px;
+  }
+
+  .how-we-work__title {
+    margin-bottom: 35px;
+    font-size: 28px;
+  }
+
+  .how-we-work__cards-wrapper {
+    padding: 15px 5px;
+  }
+
+  .how-we-work__cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .how-we-work__card {
+    min-height: 280px;
+    padding: 55px 8px 70px;
+  }
+
+  .how-we-work__number {
+    font-size: 45px;
+  }
+
+  .how-we-work__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .how-we-work__description {
+    font-size: 9px;
+  }
+}
+
+
+/* =========================================================
+   SERVICES HERO
+========================================================= */
 
 .services-hero {
   width: 100%;
@@ -262,10 +331,9 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  ;
+  color: #2b2b2b;
   text-align: center;
   transform: translateX(-50%);
-  color: #2B2B2B;
 }
 
 .services-hero__title {
@@ -352,6 +420,8 @@
   transform: translateY(-50%) translateX(0);
 }
 
+
+/* START OF RESPONISVE */
 @media (max-width: 1200px) {
   .services-hero__container {
     min-height: 700px;
@@ -383,6 +453,10 @@
 }
 
 @media (max-width: 600px) {
+  .services-hero {
+    padding: 15px;
+  }
+
   .services-hero__container {
     min-height: 700px;
     border-radius: 14px;
@@ -418,6 +492,11 @@
 
   .services-hero__title {
     margin-bottom: 16px;
+    font-size: 32px;
+  }
+
+  .services-hero__description {
+    font-size: 15px;
   }
 
   .services-hero__button {
@@ -433,50 +512,74 @@
   }
 }
 
-/* =========================
-   Light Services Hero
-========================= */
+@media (max-width: 400px) {
+  .services-hero {
+    padding: 10px;
+  }
+
+  .services-hero__container {
+    min-height: 650px;
+  }
+
+  .services-hero__object {
+    top: 14%;
+    width: 85%;
+  }
+
+  .services-hero__content {
+    top: 46%;
+    width: calc(100% - 30px);
+  }
+
+  .services-hero__title {
+    font-size: 28px;
+  }
+
+  .services-hero__description {
+    font-size: 14px;
+  }
+}
+
+
+/* =========================================================
+   LIGHT SERVICES
+========================================================= */
 
 .services-light .how-we-work,
 .services-light .services-hero {
-  background-color: var(--main-bg)
+  background-color: var(--main-bg);
 }
 
 .services-light .services-hero__content {
   color: #ffffff;
 }
 
-.services-light .how-we-work__title{
+.services-light .how-we-work__title {
   color: var(--dark-color);
-
 }
+
 .services-light .services-hero__title {
   color: #ffffff;
 }
-
 
 .services-light .services-hero__description {
   color: #ffffff;
 }
 
-
 .services-light .services-hero__button {
-  color: var(--primary-color);
   border-color: var(--primary-color);
+  color: var(--primary-color);
 }
-
 
 .services-light .services-hero__button::before,
 .services-light .services-hero__button::after {
   color: var(--primary-color);
 }
 
-
 .services-light .services-hero__button:hover {
   background-color: var(--primary-color);
   color: var(--dark-color);
 }
-
 
 .services-light .services-hero__button:hover::before,
 .services-light .services-hero__button:hover::after {

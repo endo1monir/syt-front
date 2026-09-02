@@ -19,7 +19,6 @@ export default function Home() {
 
   useGSAP(
     () => {
-      // 1. AboutUs pinned while Services sweeps above it (high on Left -> low on Right)
       ScrollTrigger.create({
         trigger: ".about-us",
         start: "top top",
@@ -29,7 +28,6 @@ export default function Home() {
         pinSpacing: false,
       });
 
-      // 2. CaseStudies pinned while FAQ sweeps above it (high on Right -> low on Left)
       ScrollTrigger.create({
         trigger: ".case-studies-section",
         start: "top top",
@@ -49,32 +47,19 @@ export default function Home() {
     >
 
       <LightNavBar />
-
       <Hero />
-
       <StatsCounter />
 
-
       <div className="about-services-wrapper">
-
         <AboutUsSection />
-
         <ServicesSection />
-
       </div>
-
-
 
       <BlogSection />
 
-
-
       <div className="cases-faq-wrapper">
-
         <CaseStudies />
-
         <Faq />
-
       </div>
 
 

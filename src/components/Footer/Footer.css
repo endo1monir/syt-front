@@ -195,6 +195,8 @@
 @media (max-width: 900px) {
   .footer {
     padding: 60px 35px 300px;
+    width: 100%;
+    margin-inline: 0;
   }
 
   .footer__grid {
@@ -212,7 +214,6 @@
 
 @media (max-width: 600px) {
   .footer {
-    width: calc(100% - 16px);
     padding: 50px 25px 300px;
     border-radius: 15px;
   }
@@ -260,7 +261,6 @@
 
 @media (max-width: 400px) {
   .footer {
-    width: calc(100% - 12px);
     padding: 45px 18px 260px;
   }
 

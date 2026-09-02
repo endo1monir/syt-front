@@ -228,6 +228,8 @@
   transform: translateY(-50%) translateX(0);
 }
 
+/* START OF RESPONISVE */
+
 @media (max-width: 1200px) {
   .services__grid {
     gap: 80px 50px;
@@ -242,7 +244,6 @@
   }
 }
 
-/* START OF RESPONISVE */
 @media (max-width: 900px) {
   .services {
     padding-top: 130px;
