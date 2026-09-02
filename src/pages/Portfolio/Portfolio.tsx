@@ -104,7 +104,6 @@ const Portfolio = () => {
     swiperRef.current.slideToLoop(index);
   };
 
-  const currentSlide = slides[activeIndex] || slides[0];
 
   return (
     <div className="light-theme">
