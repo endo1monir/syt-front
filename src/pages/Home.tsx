@@ -41,12 +41,12 @@ export default function Home() {
         anticipatePin: 1,
       });
 
-      // recalc once images/fonts are actually in
       const onLoad = () => ScrollTrigger.refresh();
       window.addEventListener("load", onLoad);
 
       return () => {
         window.removeEventListener("load", onLoad);
+        ScrollTrigger.normalizeScroll(false); // 👈 undo it when leaving this page
       };
     },
     { scope: mainRef }
