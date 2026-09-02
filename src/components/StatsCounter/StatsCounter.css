@@ -75,10 +75,12 @@
 
 /* START OF RESPONSIVE */
 @media (max-width: 991px) {
+
     .stats-counter {
         grid-template-columns: repeat(2, 1fr);
         margin-top: -75px;
         padding: 15px;
+        background: linear-gradient(160deg, rgba(129, 73, 173, 0.56) 0%, rgba(255, 252, 244, 0.72) 45%, rgba(129, 73, 173, 0.55) 100%);
     }
 
     .stats-counter__item {

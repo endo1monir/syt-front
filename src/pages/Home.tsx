@@ -19,6 +19,8 @@ export default function Home() {
 
   useGSAP(
     () => {
+      ScrollTrigger.normalizeScroll(true);
+
       ScrollTrigger.create({
         trigger: ".about-us",
         start: "top top",
@@ -26,6 +28,7 @@ export default function Home() {
         end: "top top",
         pin: true,
         pinSpacing: false,
+        anticipatePin: 1,
       });
 
       ScrollTrigger.create({
@@ -35,17 +38,22 @@ export default function Home() {
         end: "top top",
         pin: true,
         pinSpacing: false,
+        anticipatePin: 1,
       });
+
+      // recalc once images/fonts are actually in
+      const onLoad = () => ScrollTrigger.refresh();
+      window.addEventListener("load", onLoad);
+
+      return () => {
+        window.removeEventListener("load", onLoad);
+      };
     },
     { scope: mainRef }
   );
 
   return (
-    <div
-      className="light-theme"
-      ref={mainRef}
-    >
-
+    <div className="light-theme" ref={mainRef}>
       <LightNavBar />
       <Hero />
       <StatsCounter />
@@ -62,17 +70,14 @@ export default function Home() {
         <Faq />
       </div>
 
-
       <div
         style={{
           backgroundColor: "var(--secondary-color)",
-          paddingBlock: "20px"
+          paddingBlock: "20px",
         }}
       >
         <Footer />
       </div>
-
-
     </div>
   );
 }
