@@ -1,23 +1,31 @@
 import "./Portfolio.css";
+
 import { FiCamera, FiThumbsUp } from "react-icons/fi";
 import { FaInstagram } from "react-icons/fa";
 import { SiTiktok } from "react-icons/si";
-import { useMemo, useRef, useState } from "react";
+import { useMemo, useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import {
   Autoplay,
   EffectCoverflow,
   Keyboard,
   Mousewheel,
 } from "swiper/modules";
+
 import type { Swiper as SwiperType } from "swiper";
+
 import caseStudiesData from "../../helper/caseStudies.json";
+
 import "swiper/css";
 import "swiper/css/effect-coverflow";
+
 import LightNavBar from "../../components/NavBar/LightNavBar/LightNavBar";
 import Footer from "../../components/Footer/Footer";
 
 import CountUpModule from "react-countup";
+
+
 interface SlideItem {
   id: number;
   image: string;
@@ -26,8 +34,8 @@ interface SlideItem {
   link: string;
 }
 
-const Portfolio = () => {
 
+const Portfolio = () => {
 
   const AnimatedCounter =
     (
@@ -35,6 +43,7 @@ const Portfolio = () => {
         default?: typeof CountUpModule;
       }
     ).default ?? CountUpModule;
+
 
   const stats = [
     {
@@ -59,22 +68,24 @@ const Portfolio = () => {
       label: "عدد المشروعات",
     },
   ];
-  const swiperRef = useRef<SwiperType | null>(null);
 
-  const [activeIndex, setActiveIndex] = useState(0);
+
+  const swiperRef = useRef<SwiperType | null>(null);
 
   const slides: SlideItem[] = caseStudiesData.caseStudiesData;
 
+
   const coverflowConfig = useMemo(
     () => ({
-      rotate: -1,       // tilts the side cards — this is what gives the "fanned" look
-      stretch: 20,      // pulls slides closer together horizontally; tune to taste
-      depth: 200,        // pushes side slides back in Z — smaller than 500 so they don't vanish
+      rotate: -1,
+      stretch: 20,
+      depth: 200,
       modifier: 1,
       slideShadows: false,
     }),
     []
   );
+
 
   const autoplayConfig = useMemo(
     () => ({
@@ -85,10 +96,9 @@ const Portfolio = () => {
     []
   );
 
-  const handleCardClick = (
-    slide: SlideItem,
-    index: number
-  ) => {
+
+  const handleCardClick = (slide: SlideItem, index: number) => {
+
     if (!swiperRef.current) return;
 
     if (swiperRef.current.realIndex === index) {
@@ -97,7 +107,6 @@ const Portfolio = () => {
         "_blank",
         "noopener,noreferrer"
       );
-
       return;
     }
 
@@ -107,9 +116,11 @@ const Portfolio = () => {
 
   return (
     <div className="light-theme">
+
       <LightNavBar />
 
       <section className="portfolio-case">
+
         <div className="portfolio-case__content">
 
           <div className="portfolio-case__media">
@@ -122,25 +133,20 @@ const Portfolio = () => {
             </div>
           </div>
 
+
           <div className="portfolio-case__info">
 
             <div className="portfolio-case__breadcrumb">
-              <span>
-                أعمالنا السابقة
-              </span>
-
-              <span>
-                /
-              </span>
-
-              <strong>
-                وجبات الكبة
-              </strong>
+              <span>أعمالنا السابقة</span>
+              <span>/</span>
+              <strong>وجبات الكبة</strong>
             </div>
+
 
             <h1 className="portfolio-case__title">
               وجبات الكبة
             </h1>
+
 
             <p className="portfolio-case__description">
               وجبات الكبة أطلقوا حملة مؤثرين مبتكرة بهدف زيادة الوعي بالبراند
@@ -149,11 +155,13 @@ const Portfolio = () => {
               الجمهور.
             </p>
 
+
             <div className="portfolio-case__work">
 
               <h2 className="portfolio-case__work-title">
                 وش سوينا بالضبط؟
               </h2>
+
 
               <div className="portfolio-case__work-grid">
 
@@ -161,47 +169,46 @@ const Portfolio = () => {
                   <div className="portfolio-case__icon">
                     <SiTiktok />
                   </div>
-
                   <p>
                     دعينا 10 مؤثرين يزورون الفرع ويجربون الأطباق بأنفسهم.
                   </p>
                 </div>
 
+
                 <div className="portfolio-case__work-item">
                   <div className="portfolio-case__icon">
                     <FiCamera />
                   </div>
-
                   <p>
                     المحتوى كان قصير، كرييتف، ومشوّق يركّز على تجربة الأكل.
                   </p>
                 </div>
 
+
                 <div className="portfolio-case__work-item">
                   <div className="portfolio-case__icon">
                     <FaInstagram />
                   </div>
-
                   <p>
                     ركزنا على تيك توك لأنه يعطي دفعة قوية للانتشار السريع.
                   </p>
                 </div>
 
+
                 <div className="portfolio-case__work-item">
                   <div className="portfolio-case__icon">
                     <FiThumbsUp />
                   </div>
-
                   <p>
                     التغطيات كانت طبيعية وعفوية ورد فعل فوري من الجمهور.
                   </p>
                 </div>
 
+
                 <div className="portfolio-case__work-item">
                   <div className="portfolio-case__icon">
                     <FaInstagram />
                   </div>
-
                   <p>
                     كل مؤثر حفّز متابعينه يزورون الفرع ويجربون الأكل.
                   </p>
@@ -217,14 +224,19 @@ const Portfolio = () => {
 
       </section>
 
+
       <section className="portfolio-stats">
+
         <div className="portfolio-stats__counter">
+
           {stats.map((stat) => (
             <div
               className="portfolio-stats__item"
               key={stat.id}
             >
+
               <div className="portfolio-stats__value">
+
                 <AnimatedCounter
                   start={0}
                   end={stat.value}
@@ -235,18 +247,23 @@ const Portfolio = () => {
                   scrollSpyOnce
                   scrollSpyDelay={150}
                 />
+
               </div>
 
               <p className="portfolio-stats__label">
                 {stat.label}
               </p>
+
             </div>
           ))}
+
         </div>
+
       </section>
 
 
       <section className="portfolio-slider">
+
         <div className="portfolio-slider__wrap">
 
           <Swiper
@@ -287,11 +304,9 @@ const Portfolio = () => {
             onSwiper={(swiper) => {
               swiperRef.current = swiper;
             }}
-            onSlideChange={(swiper) => {
-              setActiveIndex(swiper.realIndex);
-            }}
             className="portfolio-slider__swiper"
           >
+
             {slides.map((slide, index) => (
 
               <SwiperSlide
@@ -301,9 +316,7 @@ const Portfolio = () => {
 
                 <div
                   className="portfolio-slider__card"
-                  onClick={() =>
-                    handleCardClick(slide, index)
-                  }
+                  onClick={() => handleCardClick(slide, index)}
                   role="button"
                   tabIndex={0}
                 >
@@ -325,10 +338,15 @@ const Portfolio = () => {
           </Swiper>
 
         </div>
+
       </section>
+
+
       <Footer />
+
     </div>
   );
 };
+
 
 export default Portfolio;
